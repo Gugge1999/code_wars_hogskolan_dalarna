@@ -1,16 +1,10 @@
 export class Kata {
   static highAndLow(numbers: string): string {
-    let highestNum = 0;
-    let lowestNum = 0;
+    const inputNumbersArr = numbers.split(' ').map((item) => parseInt(item));
 
-    const inputNumberArr = numbers.split(' ').map((item) => parseInt(item));
+    const highestNum = Math.max(...inputNumbersArr);
 
-    highestNum = Math.max(...inputNumberArr);
-
-    lowestNum = Math.min(...inputNumberArr);
-
-    console.log(highestNum);
-    console.log(lowestNum);
+    const lowestNum = Math.min(...inputNumbersArr);
 
     return `${highestNum} ${lowestNum}`;
   }
